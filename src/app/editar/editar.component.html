@@ -1,0 +1,128 @@
+<form [formGroup]="sismosForm" (ngSubmit)="onSubmit()">
+
+  <h4>Lista de Sismos</h4>
+  <hr>
+
+  <div class="form-group">
+    <label class="control-label col-md-2" for="RefGeografica"> Referencia Geografica</label>
+    <div class="col-md-10">
+      <div class="col-md-5">
+        <input [ngClass]="{invalidField: RefGeografica.invalid && (RefGeografica.dirty || RefGeografica.touched)}" class="form-control text-box single-line"
+          name="RefGeografica" formControlName="RefGeografica">
+        <div *ngIf="RefGeografica.invalid && (RefGeografica.dirty || RefGeografica.touched)" class="alert alert-danger">
+          <div *ngIf="RefGeografica.hasError('required')">
+            La referencia geografica es requerida
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="control-label col-md-2" for="Magnitud"> Magnitud</label>
+    <div class="col-md-10">
+      <div class="col-md-5">
+        <input [ngClass]="{invalidField: Magnitud.invalid && (Magnitud.dirty || Magnitud.touched)}" class="form-control text-box single-line"
+          name="Magnitud" formControlName="Magnitud">
+        <div *ngIf="Magnitud.invalid && (Magnitud.dirty || Magnitud.touched)" class="alert alert-danger">
+          <div *ngIf="Magnitud.hasError('required')">
+            La magnitud es requerida
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="control-label col-md-2" for="Agencia"> Agencia</label>
+    <div class="col-md-10">
+      <div class="col-md-5">
+        <input [ngClass]="{invalidField: Agencia.invalid && (Agencia.dirty || Agencia.touched)}" class="form-control text-box single-line"
+          name="Agencia" formControlName="Agencia">
+        <div *ngIf="Agencia.invalid && (Agencia.dirty || Agencia.touched)" class="alert alert-danger">
+          <div *ngIf="Agencia.hasError('required')">
+            La Agencia es requerida
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="control-label col-md-2" for="Fecha"> Fecha</label>
+    <div class="col-md-10">
+      <div class="col-md-5">
+        <input [ngClass]="{invalidField: Fecha.invalid && (Fecha.dirty || Fecha.touched)}" class="form-control text-box single-line"
+          name="Fecha" formControlName="Fecha">
+        <div *ngIf="Fecha.invalid && (Fecha.dirty || Fecha.touched)" class="alert alert-danger">
+          <div *ngIf="Fecha.hasError('required')">
+            La Fecha es requerida
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="control-label col-md-2" for="Latitud"> Latitud</label>
+    <div class="col-md-10">
+      <div class="col-md-5">
+        <input [ngClass]="{invalidField: Latitud.invalid && (Latitud.dirty || Latitud.touched)}" class="form-control text-box single-line"
+          name="Latitud" formControlName="Latitud">
+        <div *ngIf="Latitud.invalid && (Latitud.dirty || Latitud.touched)" class="alert alert-danger">
+          <div *ngIf="Latitud.hasError('required')">
+            La Latiud es requerida
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="control-label col-md-2" for="Longitud"> Longitud</label>
+    <div class="col-md-10">
+      <div class="col-md-5">
+        <input [ngClass]="{invalidField: Longitud.invalid && (Longitud.dirty || Longitud.touched)}" class="form-control text-box single-line"
+          name="Longitud" formControlName="Longitud">
+        <div *ngIf="Longitud.invalid && (Longitud.dirty || Longitud.touched)" class="alert alert-danger">
+          <div *ngIf="Longitud.hasError('required')">
+            La Longitud es requerida
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="control-label col-md-2" for="Profundidad"> Profundidad</label>
+    <div class="col-md-10">
+      <div class="col-md-5">
+        <input [ngClass]="{invalidField: Profundidad.invalid && (Profundidad.dirty || Profundidad.touched)}" class="form-control text-box single-line"
+          name="Profundidad" formControlName="Profundidad">
+        <div *ngIf="Profundidad.invalid && (Profundidad.dirty || Profundidad.touched)" class="alert alert-danger">
+          <div *ngIf="Profundidad.hasError('required')">
+            La Profundidad es requerida
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group ">
+    <div class="col-md-offset-2 col-md-10 " style="margin-top: 10px;">
+      <button class="btn btn-primary " type="submit">Guardar</button>
+    </div>
+  </div>
+
+</form>
+<div>
+  <a [routerLink]="[ '/buscar'] ">Regresar</a>
+</div>
+
+<ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="default" color="#fff" type="ball-clip-rotate"></ngx-spinner>

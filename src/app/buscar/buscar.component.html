@@ -1,0 +1,111 @@
+<form novalidate
+#form="ngForm">
+<div class="table-responsive">
+
+<h4>Filtrar por</h4>
+<div class="col-md-10">
+
+  <div class="row">
+    <div class="form-group">
+      <label class="control-label col-md-3" for="RefGeografica"> Referencia Geografica</label>
+      <div class="col-md-9">
+        <div class="col-md-5">
+          <input class="form-control text-box single-line" [(ngModel)]="RefGeografica" name="RefGeografica">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="form-group">
+      <label class="control-label col-md-3" for="Magnitud">Magnitud</label>
+      <div class="col-md-9">
+        <div class="col-md-5">
+          <input class="form-control text-box single-line" [(ngModel)]="Magnitud" name="Magnitud">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+        <div class="form-group">
+          <label class="control-label col-md-3" for="Latitud"> Latitud</label>
+          <div class="col-md-9">
+            <div class="col-md-5">
+              <input class="form-control text-box single-line" [(ngModel)]="Latitud" name="Latitud">
+            </div>
+          </div>
+        </div>
+  </div>
+
+  <div class="row">
+        <div class="form-group">
+          <label class="control-label col-md-3" for="Longitud"> Longitud</label>
+          <div class="col-md-9">
+            <div class="col-md-5">
+              <input class="form-control text-box single-line"  [(ngModel)]="Longitud" name="Longitud">
+            </div>
+            </div>
+          </div>
+  </div>
+  <div class="row">
+    &nbsp;
+  </div>
+  <div class="row">
+    &nbsp;
+  </div>
+</div>
+
+  <table class="table">
+    <tbody>
+      <tr>
+        <th>
+          Referencia Geografica
+        </th>
+        <th>
+          Magnitud
+        </th>
+        <th>
+          Latitud
+        </th>
+        <th>
+          Longitud
+        </th>
+
+        <th>
+          Fecha
+        </th>
+
+        <th>
+
+        </th>
+     </tr>
+
+      <tr *ngFor="let item of sismosList | tableFilter: form.value">
+        <td>
+          {{item.RefGeografica }}
+        </td>
+        <td>
+          {{item.Magnitud }}
+        </td>
+        <td>
+          {{item.Latitud }}
+        </td>
+        <td>
+          {{item.Longitud }}
+        </td>
+        <td>
+          {{item.Fecha }}
+        </td>
+        <td>
+          <a [routerLink]="['/editar',item._id]">Editar</a> |
+          <a [routerLink]="['/detalles',item._id]">Detalles</a>
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+
+</div>
+<ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="default" color="#fff" type="ball-clip-rotate"></ngx-spinner>
+</form>
